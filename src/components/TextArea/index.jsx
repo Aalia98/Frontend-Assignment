@@ -18,10 +18,12 @@ const TextArea = ({ onJsonParse }) => {
 
   return (
     <>
-      <div className="bg-slate-200 w-1/2">
-        <h1>UI Schema Textarea</h1>
-        <button onClick={parseJson}>Render UI</button>
-        <textarea className="w-full" name="w3review" rows="50" cols="50" onChange={handleChangeText} value={json}/>
+      <div className="bg-slate-200 w-1/2 h-full">
+        <div className="flex justify-between p-4">
+        <h1 className="text-2xl font-bold">UI Schema Textarea</h1>
+        <button className="text-white bg-slate-700 px-3 py-1 rounded-lg text-lg hover:bg-slate-600" onClick={parseJson}>Render UI</button>
+        </div>
+        <textarea className="w-full border border-slate-500 outline-none" name="w3review" rows="36" cols="50" onChange={handleChangeText} value={json}/>
       </div>
     </>
   );
