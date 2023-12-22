@@ -1,14 +1,14 @@
 import { useState } from "react"
 import Preview from "./components/Preview"
 import TextArea from "./components/TextArea"
-import Button from "./components/Button"
 
 
 function App() {
   const [jsonData, setJsonData] = useState([])
 
 const parseJson = data => {
-  setJsonData(data)
+
+  setJsonData(data.sort((a,b) => a.sort > b.sort ? 1 : -1))
 }
 
   return (
@@ -17,7 +17,6 @@ const parseJson = data => {
         <TextArea  onJsonParse={parseJson}/>
         <Preview jsonData={jsonData}/>
       </div>
-      <Button/>
     </>
   )
 }
